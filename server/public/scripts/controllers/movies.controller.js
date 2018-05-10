@@ -5,7 +5,8 @@ app.controller('MovieController', ['MovieService', '$http', function(MovieServic
     self.addMovie = MovieService.addMovie;
     // self.displayMovies = MovieService.movieList;
     self.getMovies = MovieService.getMovies;
-    self.movieList = MovieService.movieList
+    self.movieList = MovieService.movieList;
+    self.deleteMovie = MovieService.deleteMovie;
     self.getMovies();
 
 

@@ -24,8 +24,6 @@ app.service('MovieService', ['$http', function ($http) {
             })
     }
 
-    // self.getMovies();
-
     //POST
     self.addMovie = function (newMovie) {
         console.log(newMovie)
@@ -42,5 +40,20 @@ app.service('MovieService', ['$http', function ($http) {
             })
     }
 
+    //DELETE
+    self.deleteMovie = function (deletedMovie) {
+        $http({
+            method: 'DELETE',
+            url: '/movie',
+            params: deletedMovie
+        })
+        .then(function(response) {
+            console.log ('delete button clicked');
+            self.getMovies();
+        })
+        .catch(function (error) {
+            console.log('error making DELETE query', error);
+        })
+    }
 
 }])
