@@ -1,0 +1,28 @@
+<div>
+    <h2>{{vm.message}}</h2>
+</div>
+
+<div id="addGenre">
+    <h3>Add Genre</h3>
+    <input type="text" ng-model = 'newGenre.genre_name' placeholder="Genre Name"/>
+    <button ng-click="vm.addGenre(newGenre)">Submit Genre</button>
+</div>
+
+<div id="allGenres">
+    <h3>Curent Genres</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Genre</td>
+                <td>Total Movies</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="genres in vm.genreList.list">
+                <td>{{genres.genre_name}}</td>
+                <td></td>
+                <td><button>Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
