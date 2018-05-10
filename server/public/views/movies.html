@@ -1,10 +1,19 @@
 <div>
     <h2>{{vm.message}}</h2>
     <div id="inputFiels">
-        <input type="text" placeholder="Add Movie Title" />
-        <input type="text" placeholder="Genre" />
-        <input type="date" />
-        <input type="text" placeholder="Run Time" />
-        <button>Submit</button>
+        <input type="text" ng-model = 'newMovie.name' placeholder="Add Movie Title" />
+        <input type="number" ng-model = 'newMovie.genre_id' placeholder="Genre" />
+        <input type="date" ng-model = 'newMovie.release_date' />
+        <input type="text" ng-model = 'newMovie.run_time' placeholder="Run Time" />
+        <input type="text" ng-model = 'newMovie.image_url' placeholder="Image URL"/>
+        <button ng-click="vm.addMovie(newMovie)" >Submit</button>
+    </div>
+
+    <div id="movieCollection">
+        <ul>
+            <li ng-repeat="movies in vm.getMovies.list">
+
+            </li>
+        </ul>
     </div>
 </div>
