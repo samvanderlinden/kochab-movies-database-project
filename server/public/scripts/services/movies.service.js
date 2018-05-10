@@ -8,6 +8,7 @@ app.service('MovieService', ['$http', function ($http) {
 
     self.newMovie = {};
 
+    //POST
     self.addMovie = function (newMovie) {
         console.log(newMovie)
         $http({
@@ -20,6 +21,20 @@ app.service('MovieService', ['$http', function ($http) {
         })
         .catch(function(error) {
             console.log('error on movie POST', error)
+        })
+    }
+
+    self.getMovies = function () {
+        $http({
+            method: 'GET',
+            url:'/movie'
+        })
+        .then(function(response) {
+            self.movieList.list = response.data;
+            console.log('this is GET movie response.data', response.data);
+        })
+        .catch(function(error) {
+            console.log('error on /movie GET', error)
         })
     }
 }])

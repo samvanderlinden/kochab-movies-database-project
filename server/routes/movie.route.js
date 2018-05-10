@@ -18,5 +18,19 @@ router.post('/', (req, res) => {
                 })
 })
 
+//GET
+router.get('/', (req, res) => {
+    let queryText = `SELECT * FROM "movies";`;
+    pool.query(queryText)
+    .then((result) => {
+        res.send(result.rows);
+        console.log('this is our movies result.row', result.rows); //result.rows is array of objects
+    })
+    .catch((error) => {
+        console.log('Error making GET movies query', error);
+        res.sendStatus(500);
+    })
+})
+
 
 module.exports = router;
