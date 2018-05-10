@@ -10,10 +10,25 @@
     </div>
 
     <div id="movieCollection">
-        <ul>
-            <li ng-repeat="movies in vm.getMovies.list">
-
-            </li>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Release Date</th>
+                    <th>Run Time</th>
+                    <th>Movie Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat = "movies in vm.movieList.list">
+                    <td>{{movies.name}}</td>
+                    <td>{{movies.genre_id}}</td>
+                    <td>{{movies.release_date}}</td>
+                    <td>{{movies.run_time}}</td>
+                    <td>{{movies.image_url}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
