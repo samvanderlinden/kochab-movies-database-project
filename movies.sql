@@ -25,3 +25,8 @@ INSERT INTO "genre" ("genre_name")
 VALUES ('horror'),
 ('action'),
 ('comedy');
+
+-- JOIN 'MOVIES' and 'GENRE' TABLES TO CREATE TABLE WITH COLUMNS
+-- NAME, RELEASE DATE, RUN TIME, IMAGE URL, GENRE NAME
+SELECT "movies"."name", "movies"."image_url", "movies"."release_date", "movies"."run_time", "genre"."genre_name" FROM "movies"
+JOIN "genre" ON "genre"."id" = "movies"."id";

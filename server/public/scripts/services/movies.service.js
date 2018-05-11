@@ -3,7 +3,16 @@ app.service('MovieService', ['$http', function ($http) {
     var self = this;
 
     self.movieList = {
-        list: []
+        list: [
+            {
+                id: '',
+                name: '',
+                release_date: '',
+                run_time: '',
+                image_url: 'https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg'
+
+            }
+        ]
     };
 
     self.newMovie = {};
