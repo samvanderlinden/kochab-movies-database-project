@@ -17,19 +17,19 @@
             <thead>
                 <tr>
                     <th>Title</th>
-                    <th>Genre</th>
                     <th>Release Date</th>
                     <th>Run Time</th>
+                    <th>Genre</th>
                     <th>Movie Image</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat = "movies in vm.movieList.list">
                     <td>{{movies.name}}</td>
-                    <td>{{movies.genre_id}}</td>
+                    <!-- <td>{{movies.genre_id}}</td> -->
                     <td>{{movies.release_date | date: YYYY:mm:dd}}</td>
                     <td>{{movies.run_time}}</td>
-                    <!-- <td>{{movies.image_url}}</td> -->
+                    <td>{{movies.genre_name}}</td>
                     <td><img ng-src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" style="height: 250px;"/></td>
                     <td><button ng-click="vm.deleteMovie(movies)">Delete Movie</button></td>
                 </tr>
