@@ -14,13 +14,13 @@ app.service('GenreService', ['$http', function ($http) {
             method: 'GET',
             url: '/genres'
         })
-        .then(function(response) {
-            self.genreList.list = response.data;
-            console.log('console logging genre response.data', response.data);
-        })
-        .catch(function(error) {
-            console.log('error on getGenres GET', error);
-        })
+            .then(function (response) {
+                self.genreList.list = response.data;
+                console.log('console logging genre response.data', response.data);
+            })
+            .catch(function (error) {
+                console.log('error on getGenres GET', error);
+            })
     }
 
     //POST
@@ -41,17 +41,22 @@ app.service('GenreService', ['$http', function ($http) {
 
     //DELETE
     self.deleteGenre = function (genre) {
-        $http({
-            method: 'DELETE',
-            url: '/genres',
-            params: genre
-        })
-        .then(function (response) {
-            self.getGenre();
-        })
-        .catch(function(error) {
-            console.log('error on deleteGenre DELETE', error)
-        })
+        if (genre.count == 0) {
+            $http({
+                method: 'DELETE',
+                url: '/genres',
+                params: genre
+            })
+                .then(function (response) {
+                    self.getGenre();
+                })
+                .catch(function (error) {
+                    console.log('error on deleteGenre DELETE', error)
+                })
+        }
+        else {
+            alert(`Please Don't Delete! You still have movies with this genre`)
+        }
     }
 
 
