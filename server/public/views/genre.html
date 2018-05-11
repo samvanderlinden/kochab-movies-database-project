@@ -21,7 +21,7 @@
             <tr ng-repeat="genres in vm.genreList.list">
                 <td>{{genres.genre_name}}</td>
                 <td></td>
-                <td><button>Delete</button></td>
+                <td><button ng-click="vm.deleteGenre(genres)">Delete</button></td>
             </tr>
         </tbody>
     </table>

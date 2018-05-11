@@ -24,7 +24,7 @@
                 <tr ng-repeat = "movies in vm.movieList.list">
                     <td>{{movies.name}}</td>
                     <td>{{movies.genre_id}}</td>
-                    <td>{{movies.release_date}}</td>
+                    <td>{{movies.release_date | date: YYYY:mm:dd}}</td>
                     <td>{{movies.run_time}}</td>
                     <td>{{movies.image_url}}</td>
                     <td><button ng-click="vm.deleteMovie(movies)">Delete Movie</button></td>

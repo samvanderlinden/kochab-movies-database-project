@@ -32,6 +32,21 @@ router.get('/', (req, res) => {
     })
 })
 
+//DELETE
+router.delete('/', (req, res) => {
+    let genre = req.query;
+    console.log('this is genre req.query', req.query)
+    pool.query(`DELETE FROM "genre"
+                WHERE "id" = ($1);`, [genre.id])
+                .then((respons) => {
+                    res.sendStatus(200);
+                })
+                .catch((error) => {
+                    res.sendStatus(500);
+                    console.log('error with delete genre', error)
+                })
+})
+
 
 
 
