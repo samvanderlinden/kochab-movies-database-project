@@ -6,6 +6,7 @@
             <option value="">Genre</option>
             <option value="{{genres.id}}" ng-repeat="genres in vm.genreList.list">{{genres.genre_name}}</option>
         </select>
+        
         <!-- <input type="number" ng-model = 'newMovie.genre_id' placeholder="Genre" /> -->
         <input type="date" ng-model='newMovie.release_date' />
         <input type="text" ng-model='newMovie.run_time' placeholder="Run Time" />
