@@ -1,4 +1,4 @@
-app.controller('MovieController', ['MovieService', '$http', function(MovieService, $http) {
+app.controller('MovieController', ['MovieService', 'GenreService', '$http', function(MovieService, GenreService, $http) {
     console.log('MovieController has loaded');
     var self = this;
     self.message = 'Movie Controller';
@@ -7,6 +7,9 @@ app.controller('MovieController', ['MovieService', '$http', function(MovieServic
     self.getMovies = MovieService.getMovies;
     self.movieList = MovieService.movieList;
     self.deleteMovie = MovieService.deleteMovie;
+    self.genreList = GenreService.genreList;
+    self.getGenre = GenreService.getGenre;
+    self.getGenre();
     self.getMovies();
 
 
