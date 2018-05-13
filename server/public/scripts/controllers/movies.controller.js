@@ -1,4 +1,4 @@
-app.controller('MovieController', ['MovieService', 'GenreService', '$http', function(MovieService, GenreService, $http) {
+app.controller('MovieController', ['MovieService', 'GenreService', '$http', '$mdDialog', '$scope', function(MovieService, GenreService, $http, $mdDialog, $scope) {
     console.log('MovieController has loaded');
     var self = this;
     self.message = 'Movie Controller';

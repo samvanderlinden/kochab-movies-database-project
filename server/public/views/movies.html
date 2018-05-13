@@ -8,7 +8,7 @@
         </select>
         <input type="date" ng-model="vm.newMovie.release_date" />
         <input type="number" ng-model="vm.newMovie.run_time" placeholder="Run Time" />
-        <button ng-click="vm.getPoster(vm.newMovie)">Submit</button>
+        <md-button class="md-raised md-primary" ng-click="vm.getPoster(vm.newMovie)">Submit</md-button>
     </div>
 
     <div id="movieCollection">
@@ -32,7 +32,7 @@
                         <img ng-src = "{{movies.image_url}}"/>
                     </td>
                     <td>
-                        <button ng-click="vm.deleteMovie(movies)">Delete Movie</button>
+                        <md-button class="md-raised md-warn" ng-click="vm.deleteMovie(movies)">Delete Movie</md-button>
                     </td>
                 </tr>
             </tbody>
