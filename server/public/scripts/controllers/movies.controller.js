@@ -11,8 +11,6 @@ app.controller('MovieController', ['MovieService', 'GenreService', '$http', func
     self.newMovie = MovieService.newMovie;
     self.moviePoster = MovieService.movieList.list;
     self.getPoster = MovieService.getPoster;
-    
-    // self.getPoster();
     self.getGenre();
     self.getMovies();
 

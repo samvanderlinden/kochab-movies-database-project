@@ -20,7 +20,6 @@ router.post('/', (req, res) => {
 
 //GET
 router.get('/', (req, res) => {
-    // let queryText = `SELECT * FROM "genre";`;
     let queryText = `SELECT "genre"."id", "genre"."genre_name", COUNT("movies"."genre_id") FROM "movies"
                     RIGHT JOIN "genre" ON "genre"."id" = "movies"."genre_id"
                     GROUP BY "genre"."id";`;

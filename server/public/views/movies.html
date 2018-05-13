@@ -6,11 +6,8 @@
             <option value="">Genre</option>
             <option value="{{genres.id}}" ng-repeat="genres in vm.genreList.list">{{genres.genre_name}}</option>
         </select>
-        
-        <!-- <input type="number" ng-model = 'newMovie.genre_id' placeholder="Genre" /> -->
         <input type="date" ng-model="vm.newMovie.release_date" />
-        <input type="text" ng-model="vm.newMovie.run_time" placeholder="Run Time" />
-        <input type="text" ng-model="vm.newMovie.image_url" placeholder="Image URL" />
+        <input type="number" ng-model="vm.newMovie.run_time" placeholder="Run Time" />
         <button ng-click="vm.getPoster(vm.newMovie)">Submit</button>
     </div>
 
@@ -29,11 +26,9 @@
                 <tr ng-repeat="movies in vm.movieList.list">
                     <td>{{movies.name}}</td>
                     <td>{{movies.genre_name}}</td>
-                    <!-- <td>{{movies.genre_id}}</td> -->
                     <td>{{movies.release_date | date: YYYY:mm:dd}}</td>
                     <td>{{movies.run_time}}</td>
                     <td>
-                        <!-- <img ng-src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" style="height: 250px;" /> -->
                         <img ng-src = "{{movies.image_url}}"/>
                     </td>
                     <td>

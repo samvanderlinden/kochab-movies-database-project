@@ -12,7 +12,6 @@ app.service('MovieService', ['$http', function ($http) {
                 release_date: '',
                 run_time: '',
                 image_url: ''
-                // https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg
             }
         ]
     };
@@ -37,14 +36,13 @@ app.service('MovieService', ['$http', function ($http) {
 
     //GET POSTER
     self.getPoster = function (newMovie) {
-        var movieBaseUrl = 'https://image.tmdb.org/t/p/w500';
+        var movieBaseUrl = 'https://image.tmdb.org/t/p/w185';
         $http({
             method: 'GET',
             url: 'https://api.themoviedb.org/3/search/movie',
             params: {
                 api_key: myKey,
                 query: self.newMovie.name,
-                // self.newMovie.name,
             }
         })
             .then(function (response) {
