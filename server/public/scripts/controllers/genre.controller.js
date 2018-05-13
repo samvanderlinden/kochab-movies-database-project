@@ -1,4 +1,4 @@
-app.controller('GenreController', ['GenreService', '$http', function(GenreService, $http) {
+app.controller('GenreController', ['GenreService', '$mdDialog', '$http', function(GenreService, $mdDialog, $http) {
     console.log('GenreController has loaded');
     var self = this;
     self.message = 'Genre Controller';
