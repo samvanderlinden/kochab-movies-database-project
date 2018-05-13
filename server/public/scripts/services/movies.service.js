@@ -2,6 +2,8 @@ app.service('MovieService', ['$http', function ($http) {
     console.log('MovieService has loaded');
     var self = this;
 
+    var myKey = '1c3894fcd1f830f0348f7c100ce9a0b7';
+
     self.movieList = {
         list: [
             {
@@ -9,29 +11,51 @@ app.service('MovieService', ['$http', function ($http) {
                 name: '',
                 release_date: '',
                 run_time: '',
-                image_url: 'https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg'
-
+                image_url: ''
             }
         ]
     };
 
     self.newMovie = {};
 
-
-    //GET
+    //GET MOVIES
     self.getMovies = function () {
         $http({
             method: 'GET',
-            url: '/movie'
+            url: '/movie',
+        })
+        .then(function(response) {
+            self.movieList.list = response.data;
+            console.log('console logging GET response.data', response.data);
+        })
+        .catch(function(error) {
+            console.log('error on /movie GET', error)
+        })
+    }
+
+
+    //GET POSTER
+    self.getPoster = function (newMovie) {
+        var movieBaseUrl = 'https://image.tmdb.org/t/p/w185';
+        $http({
+            method: 'GET',
+            url: 'https://api.themoviedb.org/3/search/movie',
+            params: {
+                api_key: myKey,
+                query: self.newMovie.name,
+            }
         })
             .then(function (response) {
-                self.movieList.list = response.data;
-                console.log('this is GET movie response.data', response.data);
+                var image_path = response.data.results[0].poster_path;
+                newMovie.image_url = movieBaseUrl + image_path;
+                console.log('this is GET movie response.data.results[0].poster_path', response.data.results[0].poster_path);
+                self.addMovie(newMovie);
             })
             .catch(function (error) {
-                console.log('error on /movie GET', error)
+                console.log('error on /movie POSTER GET', error)
             })
     }
+
 
     //POST
     self.addMovie = function (newMovie) {
@@ -42,7 +66,7 @@ app.service('MovieService', ['$http', function ($http) {
             data: newMovie
         })
             .then(function (response) {
-                self.getMovies();
+                self.getMovies(newMovie);
             })
             .catch(function (error) {
                 console.log('error on movie POST', error)

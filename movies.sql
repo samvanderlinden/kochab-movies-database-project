@@ -29,4 +29,11 @@ VALUES ('horror'),
 -- JOIN 'MOVIES' and 'GENRE' TABLES TO CREATE TABLE WITH COLUMNS
 -- NAME, RELEASE DATE, RUN TIME, IMAGE URL, GENRE NAME
 SELECT "movies"."name", "movies"."image_url", "movies"."release_date", "movies"."run_time", "genre"."genre_name" FROM "movies"
-JOIN "genre" ON "genre"."id" = "movies"."id";
+JOIN "genre" ON "genre"."id" = "movies"."genre_id";
+
+-- JOIN 'MOVIES' and 'GENRE' TABLES TO CREATE TABLE WITH COLUMNS
+-- GENRE NAME, COUNT
+SELECT "genre"."id", "genre"."genre_name", COUNT("movies"."genre_id") FROM "movies"
+JOIN "genre" ON "genre"."id" = "movies"."genre_id"
+GROUP BY "genre"."id";
+

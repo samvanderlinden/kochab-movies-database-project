@@ -1,15 +1,14 @@
 <div>
     <h2>{{vm.message}}</h2>
     <div id="inputFields">
-        <input type="text" ng-model = 'newMovie.name' placeholder="Add Movie Title" />
-        <!-- <select>
-            <option ng-repeat = "genres in newMovie.genre_id"></option>
-        </select> -->
-        <input type="number" ng-model = 'newMovie.genre_id' placeholder="Genre" />
-        <input type="date" ng-model = 'newMovie.release_date' />
-        <input type="text" ng-model = 'newMovie.run_time' placeholder="Run Time" />
-        <input type="text" ng-model = 'newMovie.image_url' placeholder="Image URL"/>
-        <button ng-click="vm.addMovie(newMovie)" >Submit</button>
+        <input type="text" ng-model="vm.newMovie.name" placeholder="Add Movie Title" />
+        <select ng-model = "vm.newMovie.genre_id">
+            <option value="">Genre</option>
+            <option value="{{genres.id}}" ng-repeat="genres in vm.genreList.list">{{genres.genre_name}}</option>
+        </select>
+        <input type="date" ng-model="vm.newMovie.release_date" />
+        <input type="number" ng-model="vm.newMovie.run_time" placeholder="Run Time" />
+        <button ng-click="vm.getPoster(vm.newMovie)">Submit</button>
     </div>
 
     <div id="movieCollection">
@@ -24,14 +23,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat = "movies in vm.movieList.list">
+                <tr ng-repeat="movies in vm.movieList.list">
                     <td>{{movies.name}}</td>
-                    <td>{{movies.genre_id}}</td>
+                    <td>{{movies.genre_name}}</td>
                     <td>{{movies.release_date | date: YYYY:mm:dd}}</td>
                     <td>{{movies.run_time}}</td>
-                    <!-- <td>{{movies.image_url}}</td> -->
-                    <td><img ng-src="https://lajoyalink.com/wp-content/uploads/2018/03/Movie.jpg" style="height: 250px;"/></td>
-                    <td><button ng-click="vm.deleteMovie(movies)">Delete Movie</button></td>
+                    <td>
+                        <img ng-src = "{{movies.image_url}}"/>
+                    </td>
+                    <td>
+                        <button ng-click="vm.deleteMovie(movies)">Delete Movie</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
