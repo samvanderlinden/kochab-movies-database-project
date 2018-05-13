@@ -1,4 +1,4 @@
-app.service('GenreService', ['$http', function ($http) {
+app.service('GenreService', ['$http', '$mdDialog', function ($http, $mdDialog) {
     console.log('GenreService has loaded');
     var self = this;
 
