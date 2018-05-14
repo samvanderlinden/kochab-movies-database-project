@@ -1,24 +1,25 @@
 
 <md-content layout-gt-sm="row" layout-padding>
-    <div>
-        <md-input-container class="float-left">
+    <div layout="row" layout-align="center center" layout-margin>
+        <md-input-container >
             <label>Movie Title</label>
             <input ng-model="vm.newMovie.name">
         </md-input-container>
-        <md-input-container class="float-left">
+        <md-input-container id="genreDropdown">
             <label>Genre</label>
             <md-select ng-model="vm.newMovie.genre_id">
                 <md-option ng-repeat="genres in vm.genreList.list" value="{{genres.id}}">{{genres.genre_name}}</md-option>
             </md-select>
         </md-input-container>
-        <md-input-container class="float-left">
-            <md-datepicker ng-model="vm.newMovie.release_date" md-placeholder="Release date"></md-datepicker>
+        <md-input-container>
+            <label>Release Date</label>
+            <md-datepicker ng-model="vm.newMovie.release_date"></md-datepicker>
         </md-input-container>
-        <md-input-container class="float-left">
+        <md-input-container>
             <label>Run Time (minutes)</label>
             <input name="runTime" ng-model="vm.newMovie.run_time" md-placeholder="Minutes">
         </md-input-container>
-        <md-input-container class="float-left">
+        <md-input-container>
             <md-button class="md-primary md-raised" ng-click="vm.getPoster(vm.newMovie)">Submit</md-button>
         </md-input-container>
     </div>

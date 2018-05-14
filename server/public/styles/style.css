@@ -1,0 +1,33 @@
+body {
+    /* background-color: #e6ffe6; */
+}
+
+.ng-scope {
+    background-color: #c2d6d6;
+}
+
+.layout-wrap {
+    background-color: #c2d6d6;
+}
+
+#genreDropdown {
+    margin-bottom: 32px;
+}
+
+#movieCollection {
+    margin-left: 30px;
+}
+
+#homeParagraph {
+    font-size: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#homeTitle {
+    font-size: 50px;
+}
+
+md-card-content{
+    background-color: #ffebe6;
+}

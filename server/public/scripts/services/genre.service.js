@@ -55,7 +55,14 @@ app.service('GenreService', ['$http', '$mdDialog', function ($http, $mdDialog) {
                 })
         }
         else {
-            alert(`Please Don't Delete! You still have movies with this genre`)
+            $mdDialog.show(
+                $mdDialog.alert()
+                    .clickOutsideToClose(true)
+                    .title('Wait! You still have movies with this genre in your collection')
+                    .textContent('')
+                    .ariaLabel('Alert Dialog Demo')
+                    .ok('Got it!')
+            );
         }
     }
 
