@@ -1,6 +1,4 @@
-body {
-    /* background-color: #e6ffe6; */
-}
+
 
 .ng-scope {
     background-color: #c2d6d6;
@@ -30,4 +28,12 @@ body {
 
 md-card-content{
     background-color: #ffebe6;
+}
+
+md-card {
+    width: 250px;
+}
+
+md-card-content {
+    height: 250px;
 }
