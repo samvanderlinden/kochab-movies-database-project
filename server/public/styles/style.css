@@ -1,15 +1,16 @@
 
 
-.layout-wrap {
-    background-color: #c2d6d6;
-}
-
 #genreDropdown {
     margin-bottom: 32px;
 }
 
+.genreCard {
+    height: 120px;
+}
+
 #movieCollection {
     margin-left: 30px;
+    font-family: 'Raleway', sans-serif;
 }
 
 #homeParagraph {
@@ -20,10 +21,11 @@
 
 #homeTitle {
     font-size: 50px;
+    font-family: 'Raleway', sans-serif;
 }
 
 md-card-content{
-    background-color: #ffebe6;
+    background-color: #d3d7d4;
 }
 
 md-card {
@@ -32,4 +34,8 @@ md-card {
 
 md-card-content {
     height: 250px;
+}
+
+#movieCollectionDiv {
+    background-color: #40658c;
 }

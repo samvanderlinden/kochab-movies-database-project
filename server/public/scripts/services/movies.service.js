@@ -89,4 +89,5 @@ app.service('MovieService', ['$http', function ($http) {
         })
     }
 
+
 }])

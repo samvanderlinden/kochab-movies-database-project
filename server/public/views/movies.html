@@ -1,32 +1,31 @@
-
-<md-content layout-gt-sm="row" layout-padding>
-    <div layout="row" layout-align="center center" layout-margin>
-        <md-input-container >
+<md-content layout-gt-xs="row" layout-padding>
+    <div layout-gt-xs="row" layout-align="center center" layout-margin>
+        <md-input-container class="md-block">
             <label>Movie Title</label>
             <input ng-model="vm.newMovie.name">
         </md-input-container>
-        <md-input-container id="genreDropdown">
+        <md-input-container id="genreDropdown" class="md-block">
             <label>Genre</label>
             <md-select ng-model="vm.newMovie.genre_id">
                 <md-option ng-repeat="genres in vm.genreList.list" value="{{genres.id}}">{{genres.genre_name}}</md-option>
             </md-select>
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-block">
             <label>Release Date</label>
             <md-datepicker ng-model="vm.newMovie.release_date"></md-datepicker>
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-block">
             <label>Run Time (minutes)</label>
             <input name="runTime" ng-model="vm.newMovie.run_time" md-placeholder="Minutes">
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-block">
             <md-button class="md-primary md-raised" ng-click="vm.getPoster(vm.newMovie)">Submit</md-button>
         </md-input-container>
     </div>
 </md-content>
 
 
-<div class="md-padding" class="float-left" layout="row" layout-wrap>
+<div class="md-padding" class="float-left" layout-gt-xs="row" layout-wrap>
     <md-card ng-repeat="movies in vm.movieList.list">
         <img ng-src="{{movies.image_url}}" class="md-card-image" alt="user avatar">
         <md-card-content>

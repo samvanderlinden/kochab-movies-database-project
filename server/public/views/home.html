@@ -1,6 +1,15 @@
 <div layout="column" layout-align="center center">
-    <h2 id="homeTitle">Welcome to my Movie Collection App!</h2>
-    <p id="homeParagraph">This app allows you to create and keep track of your own movie collection with the ability
-        to store each movies title, genre, release date and run time. 
-    </p>
+    <h2 id="homeTitle">Current Movie Collection</h2>
+</div>
+
+<div class="md-padding" class="float-left" layout-gt-xs="row" layout-wrap>
+    <md-card ng-repeat="movies in vm.movieList.list">
+        <img ng-src="{{movies.image_url}}" class="md-card-image" alt="user avatar">
+        <md-card-content>
+            <h2>{{movies.name}}</h2>
+            <p>{{movies.genre_name}}</p>
+            <p>{{movies.release_date | date: YYYY:mm:dd}}</p>
+            <p>{{movies.run_time}}</p>
+        </md-card-content>
+    </md-card>
 </div>

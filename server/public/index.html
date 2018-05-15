@@ -20,19 +20,23 @@
     <script src="scripts/controllers/movies.controller.js"></script>
     <script src="scripts/controllers/home.controller.js"></script>
     <script src="scripts/controllers/genre.controller.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Movies Collection Project</title>
 </head>
 
 <body ng-app="MovieCollectionApp" ng-cloak>
-    <h1 id="movieCollection">Movies Collection Project</h1>
-
-    <md-nav-bar md-selected-nav-item="currentNavItem">
-        <md-nav-item md-nav-href="#!/">Home</md-nav-item>
-        <md-nav-item md-nav-href="#!/movies">Movie Collection</md-nav-item>
-        <md-nav-item md-nav-href="#!/genre">Manage Genres</md-nav-item>
-    </md-nav-bar>
-
+    <div layout-gt-xs="row" id="movieCollectionDiv">
+        <h1 id="movieCollection" class="md-block">Movie Collection</h1>
+    </div>
+    <div layout-gt-xs="row">
+        <md-nav-bar md-selected-nav-item="currentNavItem" class="md-block">
+            <md-nav-item md-nav-href="#!/">Home</md-nav-item>
+            <md-nav-item md-nav-href="#!/movies">Manage Movie Collection</md-nav-item>
+            <md-nav-item md-nav-href="#!/genre">Manage Genres</md-nav-item>
+        </md-nav-bar>
+    </div>
 
 
     <ng-view></ng-view>

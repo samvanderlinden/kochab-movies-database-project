@@ -1,4 +1,4 @@
-<md-content layout-gt-sm="row" layout-padding>
+<md-content layout-gt-xs="row" layout-padding>
     <div>
         <md-input-container>
             <label>Add Genre</label>
@@ -9,9 +9,9 @@
 </md-content>
 
 
-<div class="md-padding" class="md-block" layout="row">
-    <md-card ng-repeat="genres in vm.genreList.list">
-        <md-card-content>
+<div class="md-padding" class="md-block" layout-gt-xs="row">
+    <md-card ng-repeat="genres in vm.genreList.list" class="md-block">
+        <md-card-content class="genreCard">
             <p>Genre Name: {{genres.genre_name}}</p>
             <p>Total count: {{genres.count}}</p>
             <md-button class="md-raised md-warn" ng-click="vm.deleteGenre(genres)">Delete</md-button>
