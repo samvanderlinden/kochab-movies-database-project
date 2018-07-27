@@ -40,7 +40,7 @@ router.delete('/', (req, res) => {
     console.log('this is genre req.query', req.query)
     pool.query(`DELETE FROM "genre"
                 WHERE "id" = ($1);`, [genre.id])
-                .then((respons) => {
+                .then((response) => {
                     res.sendStatus(200);
                 })
                 .catch((error) => {

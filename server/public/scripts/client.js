@@ -5,7 +5,7 @@ var app = angular.module('MovieCollectionApp', ['ngRoute', 'ngMaterial']);
 app.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/home.html',
-        controller: 'HomeController as vm',
+        controller: 'MovieController as vm',
     }).when('/movies', {
         templateUrl: 'views/movies.html',
         controller: 'MovieController as vm',
