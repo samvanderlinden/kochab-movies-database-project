@@ -37,7 +37,6 @@ app.service('MovieService', ['$http', function ($http) {
     //GET POSTER
     self.getPoster = function (newMovie) {
         var movieBaseUrl = 'https://image.tmdb.org/t/p/w185';
-        // var url = 'https://api.themoviedb.org/3/search/movie/';
         $http({
             method: 'GET',
             url: 'https://api.themoviedb.org/3/search/movie',
@@ -54,6 +53,8 @@ app.service('MovieService', ['$http', function ($http) {
                 console.log('this is GET movie response.data.results[0].poster_path', response.data.results[0].poster_path);
                 console.log('this is GET movie response.data.results[0].release_date', response.data.results[0].release_date);
                 self.addMovie(newMovie);
+                swal({title: "A new movie has been added", 
+                    icon: "success"})
             })
             .catch(function (error) {
                 console.log('error on /movie POSTER GET', error)

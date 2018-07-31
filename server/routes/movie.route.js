@@ -6,10 +6,10 @@ const pool = require('../modules/pool');
 
 //GET
 router.get('/', (req, res) => {
-    // let queryText = `SELECT * FROM "movies";`;
     let queryText = `SELECT "movies"."id", "movies"."name", "movies"."image_url", "movies"."release_date", "movies"."run_time", "genre"."genre_name" 
                     FROM "movies"
-                    JOIN "genre" ON "genre"."id" = "movies"."genre_id";`;
+                    JOIN "genre" ON "genre"."id" = "movies"."genre_id"
+                    ORDER BY "movies"."name" ASC;`;
     pool.query(queryText)
         .then((result) => {
             res.send(result.rows);

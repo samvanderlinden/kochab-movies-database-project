@@ -33,6 +33,8 @@ app.service('GenreService', ['$http', '$mdDialog', function ($http, $mdDialog) {
         })
             .then(function (response) {
                 self.getGenre();
+                swal({title: "A new genre has been added", 
+                    icon: "success"})
             })
             .catch(function (error) {
                 console.log('error on addGenre POST', error)
@@ -55,14 +57,6 @@ app.service('GenreService', ['$http', '$mdDialog', function ($http, $mdDialog) {
                 })
         }
         else {
-            // $mdDialog.show(
-            //     $mdDialog.alert()
-            //         .clickOutsideToClose(true)
-            //         .title('Wait! You still have movies with this genre in your collection')
-            //         .textContent('')
-            //         .ariaLabel('Alert Dialog Demo')
-            //         .ok('Got it!')
-            // );
             swal({
                 title: "Wait!",
                 text: "You still have movies with this genre in your collection",
