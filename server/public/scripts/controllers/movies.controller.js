@@ -9,7 +9,6 @@ app.controller('MovieController', ['MovieService', 'GenreService', '$mdDialog', 
     self.genreList = GenreService.genreList;
     self.getGenre = GenreService.getGenre;
     self.newMovie = MovieService.newMovie;
-    self.moviePoster = MovieService.movieList.list;
     self.getPoster = MovieService.getPoster;
     self.getGenre();
     self.getMovies();

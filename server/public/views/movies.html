@@ -11,10 +11,6 @@
             </md-select>
         </md-input-container>
         <md-input-container class="md-block">
-            <label>Release Date</label>
-            <md-datepicker ng-model="vm.newMovie.release_date"></md-datepicker>
-        </md-input-container>
-        <md-input-container class="md-block">
             <label>Run Time (minutes)</label>
             <input name="runTime" ng-model="vm.newMovie.run_time" md-placeholder="Minutes">
         </md-input-container>
@@ -29,10 +25,10 @@
     <md-card ng-repeat="movies in vm.movieList.list">
         <img ng-src="{{movies.image_url}}" class="md-card-image" alt="user avatar">
         <md-card-content>
-            <h2>{{movies.name}}</h2>
-            <p>{{movies.genre_name}}</p>
-            <p>{{movies.release_date | date: YYYY:mm:dd}}</p>
-            <p>{{movies.run_time}}</p>
+            <h2>Title: {{movies.name}}</h2>
+            <p>Genre: {{movies.genre_name}}</p>
+            <p>Release Date: {{movies.release_date | date: YYYY:mm:dd}}</p>
+            <p>Run Time: {{movies.run_time}}</p>
             <md-button class="md-raised md-warn" ng-click="vm.deleteMovie(movies)">Delete</md-button>
         </md-card-content>
     </md-card>
